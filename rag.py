@@ -1,6 +1,7 @@
 from knowledge import document_readin
 from tools import document_splitter, vector_store, build_conversation_chain
 
+
 # main
 def RAG():
     documents = document_readin()
@@ -9,9 +10,10 @@ def RAG():
     conversation_chain = build_conversation_chain(vectorstore)
     return conversation_chain
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # query example
     conversation_chain = RAG()
     query = "Is there any resources mentioned scaling law? what are the titles and links of the resources?"
-    result = conversation_chain.invoke({"question":query})
+    result = conversation_chain.invoke({"question": query})
     print(result["answer"])
